@@ -1,16 +1,18 @@
-<!-- <p>user-profile works!</p> -->
+<p>user-profile works!</p>
 <!-- interpolation -->
-<!-- <h1>Name - {{ name }} and Age is - {{ age }}</h1> -->
+<h1>Name - {{ name | lowercase }} and Age is - {{ age }}</h1>
+
+<h2>{{ phoneno | countryCode }}</h2>
 
 <!-- Property Binding -->
 
-<!-- <h4>Input Value is - {{ inputVal }}</h4>
+<h4>Input Value is - {{ inputVal }}</h4>
 
-<button [disabled]="isBtnDisabled">Click</button> -->
+<button [disabled]="isBtnDisabled">Click</button>
 
 <!-- two way data binding -->
-<!-- <input type="text" [value]="inputVal" (input)="onChange($event)" /> -->
-<!-- <input type="text" [(ngModel)]="inputVal" />
+<input type="text" [value]="inputVal" (input)="onChange($event)" />
+<input type="text" [(ngModel)]="inputVal" />
 
 <div>
   @for(user of users; track user.name){
@@ -20,7 +22,7 @@
   </h1>
 
   }
-</div> -->
+</div>
 
 <h1>
   Name : {{ name }} and Status - {{ isSingle ? "single" : "coder" }} and his
