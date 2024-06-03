@@ -22,4 +22,10 @@
   }
 </div> -->
 
-<h1>Name : {{ name }}</h1>
+<h1>
+  Name : {{ name }} and Status - {{ isSingle ? "single" : "coder" }} and his
+  Salary is - {{ salary }} and he is a {{ status }}
+  <hr />
+</h1>
+
+<button (click)="sendData()">Send Data</button>

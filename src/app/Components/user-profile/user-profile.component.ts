@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, booleanAttribute, numberAttribute, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { User } from '../../../modal/user';
 
 function formateName(value:string){
   return "Hi " + value
@@ -15,10 +16,24 @@ function formateName(value:string){
 })
 export class UserProfileComponent {
 
-  @Input({alias: "userName", transform:formateName}) name =""
+  @Input({alias: "userName", transform:formateName}) name ="";
 
-  @Input() isSinghle!: boolean;
-  @Input() salary!: number
+  @Input({transform:booleanAttribute}) isSingle!: boolean;
+  @Input({transform:numberAttribute}) salary!: number
+  @Input() status=""
+
+  // passing a simple data from child to parent
+  // @Output() myEvent = new EventEmitter<string>()
+  // sendData(){
+  //   this.myEvent.emit("Coders Never Quit")
+  // }
+
+  // passing object from child to parent
+
+  @Output() myEvent = new EventEmitter<User>()
+  sendData(){
+    this.myEvent.emit({name: this.name, newSalary: 340000})
+  }
 
 
 

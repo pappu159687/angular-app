@@ -1,5 +1,21 @@
 <h1>Angular First App</h1>
 
-<app-user-profile userName="ramesh"></app-user-profile>
-<app-user-profile userName="suresh"></app-user-profile>
-<app-user-profile userName="sachin"></app-user-profile>
+<app-user-profile
+  *ngFor="let user of users"
+  [userName]="user.name"
+  [isSingle]="user.isSingle"
+  [salary]="user.salary"
+  [status]="user.status"
+  (myEvent)="recevedData($event)"
+></app-user-profile>
+
+<!-- <app-user-profile
+  userName="dhruv"
+  isSingle="false"
+  salary="300000"
+></app-user-profile>
+<app-user-profile
+  userName="sachin"
+  isSingle="true"
+  salary="400000"
+></app-user-profile> -->
